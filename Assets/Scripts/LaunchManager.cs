@@ -34,14 +34,12 @@ public class LaunchManager : MonoBehaviourPunCallbacks
     {
         if (SearchingGamePanel.activeSelf)
         {
-            if (PhotonNetwork.CurrentRoom != null && PhotonNetwork.CurrentRoom.PlayerCount == 2)
-            {
-                PhotonNetwork.LoadLevel("GameScene");
-            }
+            //if (PhotonNetwork.CurrentRoom != null && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+            //{
+            //    PhotonNetwork.LoadLevel("GameScene");
+            //}
         }
-        
 
-        
     }
 
     public void SinglePlayer()
@@ -134,11 +132,18 @@ public class LaunchManager : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log(PhotonNetwork.NickName + " joined to" + PhotonNetwork.CurrentRoom.Name + " " + PhotonNetwork.CurrentRoom.PlayerCount);
+        //if (PhotonNetwork.CurrentRoom != null && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        //{
+        //    PhotonNetwork.LoadLevel("GameScene");
+        //}
+
     }
 
-    public override void OnPlayerEnteredRoom(Player newPlayer)
+    public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
     {
         Debug.Log(newPlayer.NickName + " joined to" + PhotonNetwork.CurrentRoom.Name);
+        PhotonNetwork.LoadLevel("GameScene");
+       
     }
 
     void CreateAndJoinRoom()

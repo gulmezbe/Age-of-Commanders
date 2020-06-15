@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class LaunchManager : MonoBehaviourPunCallbacks
 {
@@ -32,13 +33,6 @@ public class LaunchManager : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        if (SearchingGamePanel.activeSelf)
-        {
-            //if (PhotonNetwork.CurrentRoom != null && PhotonNetwork.CurrentRoom.PlayerCount == 2)
-            //{
-            //    PhotonNetwork.LoadLevel("GameScene");
-            //}
-        }
 
     }
 
@@ -131,19 +125,19 @@ public class LaunchManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        Debug.Log(PhotonNetwork.NickName + " joined to" + PhotonNetwork.CurrentRoom.Name + " " + PhotonNetwork.CurrentRoom.PlayerCount);
-        //if (PhotonNetwork.CurrentRoom != null && PhotonNetwork.CurrentRoom.PlayerCount == 2)
-        //{
-        //    PhotonNetwork.LoadLevel("GameScene");
-        //}
+        Hashtable setColor = new Hashtable() { { "color", "red" } };
+        PhotonNetwork.LocalPlayer.SetCustomProperties(setColor);
 
+        Debug.Log(PhotonNetwork.NickName + " joined to" + PhotonNetwork.CurrentRoom.Name + " " + PhotonNetwork.CurrentRoom.PlayerCount);
     }
 
-    public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
+    public override void OnPlayerEnteredRoom(Player newPlayer)
     {
+        Hashtable setColor = new Hashtable() { { "color", "blue" } };
+        newPlayer.SetCustomProperties(setColor);
+
         Debug.Log(newPlayer.NickName + " joined to" + PhotonNetwork.CurrentRoom.Name);
         PhotonNetwork.LoadLevel("GameScene");
-       
     }
 
     void CreateAndJoinRoom()
@@ -157,8 +151,4 @@ public class LaunchManager : MonoBehaviourPunCallbacks
 
         PhotonNetwork.CreateRoom(randomRoomName, roomOptions);
     }
-
-
-
-
 }

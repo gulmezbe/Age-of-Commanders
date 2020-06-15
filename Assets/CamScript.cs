@@ -4,8 +4,8 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-[RequireComponent(typeof(Camera))]
-[ExecuteInEditMode]
+//[RequireComponent(typeof(Camera))]
+//[ExecuteInEditMode]
 public class CamScript : MonoBehaviourPunCallbacks
 {
     
@@ -24,7 +24,9 @@ public class CamScript : MonoBehaviourPunCallbacks
         }
         void OnPreRender()
         {
-            if (PhotonNetwork.NickName == "ali")
+            string playercolor = (string)PhotonNetwork.LocalPlayer.CustomProperties["color"];
+
+            if (playercolor == "blue")
             {
                 flipHorizontal = true;
             }

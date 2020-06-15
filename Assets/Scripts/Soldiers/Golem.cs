@@ -6,8 +6,7 @@ public class Golem : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float hitPoints = 100f;
-    [SerializeField]
-    public Camera cam;
+
     // Start is called before the first frame update
     void Start()
     {

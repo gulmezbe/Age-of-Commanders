@@ -2,10 +2,8 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AgeOfCommandersGameManager
-    - CamScript
     - Golem
     - LaunchManager
-    - Player
     - PlayerInformation
     - Spriter2UnityDX.EntityRenderer
     - Spriter2UnityDX.TextureController
@@ -96,69 +94,73 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11192}
     - Class: 114
-      Script: {instanceID: 11334}
+      Script: {instanceID: 11338}
     - Class: 114
-      Script: {instanceID: 11354}
+      Script: {instanceID: 11358}
     - Class: 114
-      Script: {instanceID: 11392}
+      Script: {instanceID: 11396}
     - Class: 114
-      Script: {instanceID: 11438}
+      Script: {instanceID: 11404}
     - Class: 114
-      Script: {instanceID: 11600}
+      Script: {instanceID: 11446}
     - Class: 114
-      Script: {instanceID: 11820}
+      Script: {instanceID: 11610}
     - Class: 114
-      Script: {instanceID: 11906}
+      Script: {instanceID: 11830}
     - Class: 114
-      Script: {instanceID: 11940}
+      Script: {instanceID: 11866}
     - Class: 114
-      Script: {instanceID: 11984}
+      Script: {instanceID: 11920}
     - Class: 114
-      Script: {instanceID: 12188}
+      Script: {instanceID: 11954}
     - Class: 114
-      Script: {instanceID: 12222}
+      Script: {instanceID: 11998}
     - Class: 114
-      Script: {instanceID: 12256}
+      Script: {instanceID: 12202}
     - Class: 114
-      Script: {instanceID: 12358}
+      Script: {instanceID: 12248}
     - Class: 114
-      Script: {instanceID: 12390}
+      Script: {instanceID: 12272}
     - Class: 114
-      Script: {instanceID: 12446}
+      Script: {instanceID: 12374}
     - Class: 114
-      Script: {instanceID: 12520}
+      Script: {instanceID: 12406}
     - Class: 114
-      Script: {instanceID: 12602}
+      Script: {instanceID: 12464}
     - Class: 114
-      Script: {instanceID: 12610}
+      Script: {instanceID: 12538}
     - Class: 114
-      Script: {instanceID: 12624}
+      Script: {instanceID: 12620}
     - Class: 114
-      Script: {instanceID: 12662}
+      Script: {instanceID: 12628}
     - Class: 114
-      Script: {instanceID: 12678}
+      Script: {instanceID: 12642}
     - Class: 114
-      Script: {instanceID: 12834}
+      Script: {instanceID: 12680}
     - Class: 114
-      Script: {instanceID: 12854}
+      Script: {instanceID: 12696}
     - Class: 114
-      Script: {instanceID: 12864}
+      Script: {instanceID: 12852}
     - Class: 114
-      Script: {instanceID: 12922}
+      Script: {instanceID: 12872}
     - Class: 114
-      Script: {instanceID: 12998}
+      Script: {instanceID: 12882}
     - Class: 114
-      Script: {instanceID: 13188}
+      Script: {instanceID: 12940}
     - Class: 114
-      Script: {instanceID: 13320}
+      Script: {instanceID: 13016}
     - Class: 114
-      Script: {instanceID: 13368}
+      Script: {instanceID: 13208}
     - Class: 114
-      Script: {instanceID: 13450}
+      Script: {instanceID: 13342}
     - Class: 114
-      Script: {instanceID: 13480}
+      Script: {instanceID: 13392}
     - Class: 114
-      Script: {instanceID: 13488}
+      Script: {instanceID: 13476}
+    - Class: 114
+      Script: {instanceID: 13506}
+    - Class: 114
+      Script: {instanceID: 13514}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -178,6 +180,8 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
+      Script: {instanceID: 0}
+    - Class: 212
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
@@ -200,54 +204,24 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 21
       Script: {instanceID: 0}
-    - Class: 23
-      Script: {instanceID: 0}
     - Class: 28
-      Script: {instanceID: 0}
-    - Class: 33
-      Script: {instanceID: 0}
-    - Class: 43
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 64
-      Script: {instanceID: 0}
-    - Class: 74
-      Script: {instanceID: 0}
     - Class: 81
-      Script: {instanceID: 0}
-    - Class: 91
-      Script: {instanceID: 0}
-    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11192}
+      Script: {instanceID: 11920}
     - Class: 114
-      Script: {instanceID: 11438}
+      Script: {instanceID: 12654}
     - Class: 114
-      Script: {instanceID: 11906}
+      Script: {instanceID: 13392}
     - Class: 114
-      Script: {instanceID: 12222}
-    - Class: 114
-      Script: {instanceID: 12636}
-    - Class: 114
-      Script: {instanceID: 12998}
-    - Class: 114
-      Script: {instanceID: 13368}
-    - Class: 114
-      Script: {instanceID: 13450}
-    - Class: 114
-      Script: {instanceID: 26298}
-    - Class: 114
-      Script: {instanceID: 26304}
-    - Class: 114
-      Script: {instanceID: 33282}
-    - Class: 114
-      Script: {instanceID: 38236}
+      Script: {instanceID: 13476}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -257,12 +231,6 @@ ScriptsOnlyBuild:
     - Class: 212
       Script: {instanceID: 0}
     - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -351,6 +319,12 @@ ScriptsOnlyBuild:
     className: PhotonStatsGui
   - hash:
       serializedVersion: 2
+      Hash: 93a9e81f7910e437f929ee56a89b0c60
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: CamScript
+  - hash:
+      serializedVersion: 2
       Hash: 8ae3331b163cc121825eeed3975d6c4d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -435,6 +409,12 @@ ScriptsOnlyBuild:
     className: Scrollbar
   - hash:
       serializedVersion: 2
+      Hash: 7b95c5cd8dc41ab28a2bb495568574b4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Spriter2UnityDX
+    className: EntityRenderer
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro
@@ -451,6 +431,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Spriter2UnityDX
+    className: SortingOrderUpdater
   - hash:
       serializedVersion: 2
       Hash: 60fb902c3bfc0533f4e7b79e5d161e78
@@ -681,6 +667,12 @@ ScriptsOnlyBuild:
     className: OnClickRpc
   - hash:
       serializedVersion: 2
+      Hash: 2eabeafa44f8f5e6fff26516fb87ac65
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Golem
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
@@ -697,6 +689,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
     className: PunCockpitEmbed
+  - hash:
+      serializedVersion: 2
+      Hash: f281436bdf2c2ece1467ea60afac7f50
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Archer
   - hash:
       serializedVersion: 2
       Hash: e6f0efd0e20669d577e9d21526b3d3f9
@@ -897,16 +895,16 @@ ScriptsOnlyBuild:
     className: ConnectionHandler
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Player
-  - hash:
-      serializedVersion: 2
       Hash: 19c703fb20b3231dbd1a21248e8bb11b
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
     className: PlayerDetailsController
+  - hash:
+      serializedVersion: 2
+      Hash: d7f8b145b6ba98b3587a77f28e5e4c62
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Spriter2UnityDX
+    className: TextureController
   - hash:
       serializedVersion: 2
       Hash: cba6cca6bb3290c4c00d709cf63843db
@@ -1779,40 +1777,10 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: f281436bdf2c2ece1467ea60afac7f50
+      Hash: 98aba2b2b7231b3103f94b9c5035d276
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Archer
-  - hash:
-      serializedVersion: 2
-      Hash: 7b95c5cd8dc41ab28a2bb495568574b4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Spriter2UnityDX
-    className: EntityRenderer
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Spriter2UnityDX
-    className: SortingOrderUpdater
-  - hash:
-      serializedVersion: 2
-      Hash: d7f8b145b6ba98b3587a77f28e5e4c62
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: Spriter2UnityDX
-    className: TextureController
-  - hash:
-      serializedVersion: 2
-      Hash: e5a6e17b216703129562ddf562925733
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Golem
-  - hash:
-      serializedVersion: 2
-      Hash: 93a9e81f7910e437f929ee56a89b0c60
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CamScript
+    className: PlayerInMatch
   platform: 5
   scenePathNames:
   - Assets/Scenes/GameLauncherScene.unity

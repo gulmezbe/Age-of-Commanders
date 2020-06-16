@@ -134,7 +134,7 @@ public class LaunchManager : MonoBehaviourPunCallbacks
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         Hashtable setColor = new Hashtable() { { "color", "blue" } };
-        newPlayer.SetCustomProperties(setColor);
+        PhotonNetwork.LocalPlayer.SetCustomProperties(setColor);
 
         Debug.Log(newPlayer.NickName + " joined to" + PhotonNetwork.CurrentRoom.Name);
         PhotonNetwork.LoadLevel("GameScene");

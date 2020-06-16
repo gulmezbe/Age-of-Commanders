@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CamScript.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\EventSystemSpawner.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextButtonTransition.cs" />
@@ -76,9 +75,12 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
     <Compile Include="Assets\Scripts\AgeOfCommandersGameManager.cs" />
+    <Compile Include="Assets\Scripts\CamScript.cs" />
     <Compile Include="Assets\Scripts\LaunchManager.cs" />
     <Compile Include="Assets\Scripts\PlayerInMatch.cs" />
     <Compile Include="Assets\Scripts\PlayerInformation.cs" />
+    <Compile Include="Assets\Scripts\PlayerSetup.cs" />
+    <Compile Include="Assets\Scripts\PlayerSoldierSpawn.cs" />
     <Compile Include="Assets\Scripts\Race.cs" />
     <Compile Include="Assets\Scripts\Soldier.cs" />
     <Compile Include="Assets\Scripts\SoldierHelper.cs" />

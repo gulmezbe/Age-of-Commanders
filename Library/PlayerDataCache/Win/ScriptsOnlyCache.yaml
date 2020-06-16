@@ -2,9 +2,11 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AgeOfCommandersGameManager
+    - CamScript
     - Golem
     - LaunchManager
     - PlayerInformation
+    - PlayerSetup
     - Spriter2UnityDX.EntityRenderer
     - Spriter2UnityDX.TextureController
     PhotonUnityNetworking.Demos.dll:
@@ -106,17 +108,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11610}
     - Class: 114
-      Script: {instanceID: 11830}
+      Script: {instanceID: 11832}
     - Class: 114
-      Script: {instanceID: 11866}
+      Script: {instanceID: 11868}
     - Class: 114
-      Script: {instanceID: 11920}
+      Script: {instanceID: 11922}
     - Class: 114
-      Script: {instanceID: 11954}
+      Script: {instanceID: 11956}
     - Class: 114
-      Script: {instanceID: 11998}
+      Script: {instanceID: 12000}
     - Class: 114
-      Script: {instanceID: 12202}
+      Script: {instanceID: 12204}
     - Class: 114
       Script: {instanceID: 12248}
     - Class: 114
@@ -161,6 +163,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13506}
     - Class: 114
       Script: {instanceID: 13514}
+    - Class: 114
+      Script: {instanceID: 20884}
+    - Class: 114
+      Script: {instanceID: 28914}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -215,13 +221,17 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11920}
+      Script: {instanceID: 11922}
     - Class: 114
       Script: {instanceID: 12654}
     - Class: 114
       Script: {instanceID: 13392}
     - Class: 114
       Script: {instanceID: 13476}
+    - Class: 114
+      Script: {instanceID: 20884}
+    - Class: 114
+      Script: {instanceID: 28914}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -317,12 +327,6 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
     className: PhotonStatsGui
-  - hash:
-      serializedVersion: 2
-      Hash: 93a9e81f7910e437f929ee56a89b0c60
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: CamScript
   - hash:
       serializedVersion: 2
       Hash: 8ae3331b163cc121825eeed3975d6c4d
@@ -599,6 +603,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RectMask2D
+  - hash:
+      serializedVersion: 2
+      Hash: 98aba2b2b7231b3103f94b9c5035d276
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerInMatch
   - hash:
       serializedVersion: 2
       Hash: 4e9333594897a1fb8b136ad2eae996c7
@@ -1777,10 +1787,16 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 98aba2b2b7231b3103f94b9c5035d276
+      Hash: 93a9e81f7910e437f929ee56a89b0c60
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PlayerInMatch
+    className: CamScript
+  - hash:
+      serializedVersion: 2
+      Hash: fbcd6fc8130d7a7679bee806eb45c588
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerSetup
   platform: 5
   scenePathNames:
   - Assets/Scenes/GameLauncherScene.unity

@@ -14,16 +14,12 @@ public class CamScript : MonoBehaviourPunCallbacks
 
     void Awake()
     {
-        camera = GetComponent<Camera>();               
-    }
+        camera = GetComponent<Camera>();
 
-    void OnPreCull()
-    {
         if (PhotonNetwork.IsConnected)
         {
-            string playercolor = (string)PhotonNetwork.LocalPlayer.CustomProperties["color"];
-            Debug.Log("player color   " + playercolor);
-            if (playercolor == "red")
+            Debug.Log("player color   " + (string)PhotonNetwork.LocalPlayer.CustomProperties["color"] + "    " + PhotonNetwork.LocalPlayer.NickName);
+            if ((string)PhotonNetwork.LocalPlayer.CustomProperties["color"] == "blue")
             {
                 flipHorizontal = true;
             }
@@ -31,8 +27,11 @@ public class CamScript : MonoBehaviourPunCallbacks
             {
                 flipHorizontal = false;
             }
-        }
+        }          
+    }
 
+    void OnPreCull()
+    {
         camera.ResetWorldToCameraMatrix();
         camera.ResetProjectionMatrix();
         Vector3 scale = new Vector3(flipHorizontal ? -1 : 1, 1, 1);

@@ -118,25 +118,28 @@ public class LaunchManager : MonoBehaviourPunCallbacks
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
+        PhotonNetwork.LocalPlayer.CustomProperties.Clear();
+        Hashtable setColor = new Hashtable() { { "color", "red" } };
+        PhotonNetwork.LocalPlayer.SetCustomProperties(setColor);
+
         base.OnJoinRandomFailed(returnCode, message);
         Debug.Log(message);
         CreateAndJoinRoom();
     }
 
     public override void OnJoinedRoom()
-    {
-        Hashtable setColor = new Hashtable() { { "color", "red" } };
-        PhotonNetwork.LocalPlayer.SetCustomProperties(setColor);
-
-        Debug.Log(PhotonNetwork.NickName + " joined to" + PhotonNetwork.CurrentRoom.Name + " " + PhotonNetwork.CurrentRoom.PlayerCount);
+    {       
+        Debug.Log(PhotonNetwork.NickName + " joined to" + PhotonNetwork.CurrentRoom.Name + " " + (string)PhotonNetwork.LocalPlayer.CustomProperties["color"] + " " + PhotonNetwork.CurrentRoom.PlayerCount);
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
-        Hashtable setColor = new Hashtable() { { "color", "blue" } };
-        PhotonNetwork.LocalPlayer.SetCustomProperties(setColor);
+        newPlayer.CustomProperties.Clear();
+        Hashtable setColor2 = new Hashtable() { { "color", "blue" } };
+        newPlayer.SetCustomProperties(setColor2);
 
-        Debug.Log(newPlayer.NickName + " joined to" + PhotonNetwork.CurrentRoom.Name);
+        Debug.Log(newPlayer.NickName + " joined to" + PhotonNetwork.CurrentRoom.Name + " " + (string)newPlayer.CustomProperties["color"] + " " + PhotonNetwork.CurrentRoom.PlayerCount);
+
         PhotonNetwork.LoadLevel("GameScene");
     }
 

@@ -15,7 +15,7 @@ public class AgeOfCommandersGameManager : MonoBehaviourPunCallbacks
     void Start()
     {
         Hashtable setBaseHealth = new Hashtable() { { "baseHealth", 100 } };
-        PhotonNetwork.LocalPlayer.SetCustomProperties(setBaseHealth);
+        PhotonNetwork.SetPlayerCustomProperties(setBaseHealth);
 
         if (PhotonNetwork.IsConnected)
         {

@@ -108,6 +108,7 @@ GameObject:
   - component: {fileID: 2143084658351141570}
   - component: {fileID: 929557477209185573}
   - component: {fileID: 803795323633526285}
+  - component: {fileID: 941002979987344667}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -165,3 +166,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 1810213003}
+--- !u!114 &941002979987344667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91886209065360915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f13c12026f04944695f81cf58f71388, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  golemPrefab: {fileID: 8094050080199319091, guid: 7d37689a278015148b4f083cd8c24dde,
+    type: 3}

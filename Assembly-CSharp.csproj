@@ -84,8 +84,9 @@
     <Compile Include="Assets\Scripts\Race.cs" />
     <Compile Include="Assets\Scripts\Soldier.cs" />
     <Compile Include="Assets\Scripts\SoldierHelper.cs" />
+    <Compile Include="Assets\Scripts\SoldierMovementController.cs" />
     <Compile Include="Assets\Scripts\Soldiers\Archer.cs" />
-    <Compile Include="Assets\Scripts\Soldiers\Golem.cs" />
+    <Compile Include="Assets\Scripts\Soldiers\SoldierSetup.cs" />
     <Compile Include="Assets\Spriter2UnityDX\Runtime\EntityRenderer.cs" />
     <Compile Include="Assets\Spriter2UnityDX\Runtime\SortingOrderUpdater.cs" />
     <Compile Include="Assets\Spriter2UnityDX\Runtime\TextureController.cs" />

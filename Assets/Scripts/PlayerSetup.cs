@@ -13,11 +13,13 @@ public class PlayerSetup : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine)
         {
+            transform.GetComponent<PlayerSoldierSpawn>().enabled = true;
             playerCamera.GetComponent<Camera>().enabled = true;
             playerCamera.GetComponent<AudioListener>().enabled = true;
         }
         else
         {
+            transform.GetComponent<PlayerSoldierSpawn>().enabled = false;
             playerCamera.GetComponent<Camera>().enabled = false;
             playerCamera.GetComponent<AudioListener>().enabled = false;
         }

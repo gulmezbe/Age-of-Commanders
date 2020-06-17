@@ -27,7 +27,7 @@ public class CamScript : MonoBehaviourPunCallbacks
             {
                 flipHorizontal = false;
             }
-        }          
+        }         
     }
 
     void OnPreCull()

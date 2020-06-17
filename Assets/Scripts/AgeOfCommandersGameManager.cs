@@ -10,6 +10,19 @@ public class AgeOfCommandersGameManager : MonoBehaviourPunCallbacks
     [SerializeField]
     GameObject playerPrefab;
 
+    public static AgeOfCommandersGameManager instance;
+
+    private void Awake()
+    {
+        if(instance != null)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

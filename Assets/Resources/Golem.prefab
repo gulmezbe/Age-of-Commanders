@@ -955,7 +955,7 @@ GameObject:
   - component: {fileID: -3238022972210567880}
   m_Layer: 0
   m_Name: Golem
-  m_TagString: Untagged
+  m_TagString: Soldier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1035,8 +1035,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd110846851f0c438f157a6e6156938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  hitPoints: 100
+  soldierPrefab: {fileID: 0}
+  moveSpeedRed: 3
+  moveSpeedBlue: -3
+  soldierHealth: 100
+  soldierRange: 1
+  otherSoldiers: []
 --- !u!114 &-4242012395223784472
 MonoBehaviour:
   m_ObjectHideFlags: 0

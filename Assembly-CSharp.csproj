@@ -76,6 +76,7 @@
     <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
     <Compile Include="Assets\Scripts\AgeOfCommandersGameManager.cs" />
     <Compile Include="Assets\Scripts\CamScript.cs" />
+    <Compile Include="Assets\Scripts\CameraSetup.cs" />
     <Compile Include="Assets\Scripts\LaunchManager.cs" />
     <Compile Include="Assets\Scripts\PlayerInMatch.cs" />
     <Compile Include="Assets\Scripts\PlayerInformation.cs" />
@@ -84,8 +85,8 @@
     <Compile Include="Assets\Scripts\Race.cs" />
     <Compile Include="Assets\Scripts\Soldier.cs" />
     <Compile Include="Assets\Scripts\SoldierHelper.cs" />
-    <Compile Include="Assets\Scripts\SoldierMovementController.cs" />
     <Compile Include="Assets\Scripts\Soldiers\Archer.cs" />
+    <Compile Include="Assets\Scripts\Soldiers\SoldierMovementController.cs" />
     <Compile Include="Assets\Scripts\Soldiers\SoldierSetup.cs" />
     <Compile Include="Assets\Spriter2UnityDX\Runtime\EntityRenderer.cs" />
     <Compile Include="Assets\Spriter2UnityDX\Runtime\SortingOrderUpdater.cs" />

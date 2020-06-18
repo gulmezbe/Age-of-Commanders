@@ -1035,12 +1035,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dd110846851f0c438f157a6e6156938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soldierPrefab: {fileID: 0}
-  moveSpeedRed: 3
-  moveSpeedBlue: -3
-  soldierHealth: 100
-  soldierRange: 1
-  otherSoldiers: []
 --- !u!114 &-4242012395223784472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1093,7 +1087,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 2
+    Name: IsWalking
+  - Type: 4
+    SynchronizeType: 2
+    Name: IsAttacking
+  - Type: 9
+    SynchronizeType: 2
+    Name: IsDying
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0

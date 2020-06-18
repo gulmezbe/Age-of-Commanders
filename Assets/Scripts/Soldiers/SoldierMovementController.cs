@@ -6,18 +6,17 @@ using Photon.Realtime;
 
 public class SoldierMovementController : MonoBehaviourPunCallbacks
 {
-    [SerializeField]
-    GameObject soldierPrefab;
+    float moveSpeedRed = 1f;
+    float moveSpeedBlue = -1f;
+    float soldierHealth = 100f;
+    float soldierRange = 1.5f;
 
-    public float moveSpeedRed = 3f;
-    public float moveSpeedBlue = -3f;
-    public float soldierHealth = 100f;
-    public float soldierRange = 1f;
-
-    public GameObject[] otherSoldiers;
+    GameObject[] otherSoldiers;
 
     Vector3 directionOfMovementRed;
     Vector3 directionOfMovementBlue;
+
+    Animator animator;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +26,10 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
 
         directionOfMovementRed = new Vector3(horizontalMovementRed, 0, 0);
         directionOfMovementBlue = new Vector3(horizontalMovementBlue, 0, 0);
+
+        animator = GetComponent<Animator>();
+
+        animator.SetBool("IsWalking", true);
     }
 
     // Update is called once per frame
@@ -38,21 +41,25 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
         {
             if ((string)soldier.GetComponent<PhotonView>().Owner.CustomProperties["color"] != (string)gameObject.GetComponent<PhotonView>().Owner.CustomProperties["color"] && soldier.transform.position.y == gameObject.transform.position.y && Mathf.Abs(soldier.transform.position.x - gameObject.transform.position.x) < soldierRange)
             {
-                //PhotonNetwork.Destroy(gameObject);
-                break;
+                animator.SetBool("IsAttacking", true);
+                return;
             }
             else
             {
-                if ((string)PhotonNetwork.LocalPlayer.CustomProperties["color"] == "red")
-                {
-                    gameObject.transform.Translate(directionOfMovementRed);
-
-                }
-                else
-                {
-                    gameObject.transform.Translate(directionOfMovementBlue);
-                }
+                
             }
-        }                  
+        }
+
+        animator.SetBool("IsAttacking", false);
+
+        if ((string)PhotonNetwork.LocalPlayer.CustomProperties["color"] == "red")
+        {
+            gameObject.transform.Translate(directionOfMovementRed);
+
+        }
+        else
+        {
+            gameObject.transform.Translate(directionOfMovementBlue);
+        }
     }
 }

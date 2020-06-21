@@ -12,8 +12,6 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
     float soldierHealth = 100f;
     float soldierRange = 1.5f;
     float soldierDamage = 100f;
-    float attackRate = 5.0f;
-    float attackTimer;
 
     GameObject[] otherSoldiers;
 
@@ -25,8 +23,6 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        attackTimer = 0.0f;
-
         float horizontalMovementRed = moveSpeedRed * Time.fixedDeltaTime;
         float horizontalMovementBlue = moveSpeedBlue * Time.fixedDeltaTime;
 
@@ -43,37 +39,50 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
     {
         if (soldierHealth <= 0f)
         {
-            Die();
-        }
+            gameObject.GetComponent<PhotonView>().RPC("ChangeDie", RpcTarget.AllBuffered);
+            animator.SetBool("IsDying", true);
 
-        if (attackTimer < attackRate)
-        {
-            attackTimer += Time.fixedDeltaTime;
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.DieFinished") && photonView.IsMine)
+            {
+                PhotonNetwork.Destroy(gameObject);
+            }
+
+            return;
         }
 
         otherSoldiers = GameObject.FindGameObjectsWithTag("Soldier");
 
         foreach (GameObject soldier in otherSoldiers)
         {
-            if (!isDead && (string)soldier.GetComponent<PhotonView>().Owner.CustomProperties["color"] != (string)gameObject.GetComponent<PhotonView>().Owner.CustomProperties["color"] && soldier.transform.position.y == gameObject.transform.position.y && Mathf.Abs(soldier.transform.position.x - gameObject.transform.position.x) < soldierRange)
+            if (!(soldier.GetComponent<SoldierMovementController>().isDead) && !isDead && (string)soldier.GetComponent<PhotonView>().Owner.CustomProperties["color"] != (string)gameObject.GetComponent<PhotonView>().Owner.CustomProperties["color"] && soldier.transform.position.y == gameObject.transform.position.y && Mathf.Abs(soldier.transform.position.x - gameObject.transform.position.x) < soldierRange)
             {
-                animator.SetBool("IsAttacking", true);
-
-                if (attackTimer > attackRate && (string)PhotonNetwork.LocalPlayer.CustomProperties["color"] == "red")
+                animator.SetBool("IsWalking", false);
+                
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Base") && (string)PhotonNetwork.LocalPlayer.CustomProperties["color"] == "red")
                 {
-                    GiveDamage(soldier);
-                    attackTimer = 0.0f;
+                    animator.SetBool("IsAttacking", true);
                 }
-                
+
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.AttackFinished") && (string)PhotonNetwork.LocalPlayer.CustomProperties["color"] == "red")
+                {
+                    if (gameObject != null && soldierHealth > 0)
+                    {
+                        soldier.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.AllBuffered, soldierDamage);
+                    }
+                        
+                    animator.SetBool("IsAttacking", false);
+                }
+
                 return;
-            }
-            else
-            {
-                
             }
         }
 
-        animator.SetBool("IsAttacking", false);
+        if (animator.GetBool("IsAttacking"))
+        {
+            animator.SetBool("IsAttacking", false);
+        }
+
+        animator.SetBool("IsWalking", true);
 
         if ((string)PhotonNetwork.LocalPlayer.CustomProperties["color"] == "red")
         {
@@ -86,40 +95,15 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
         }
     }
 
-    public void GiveDamage(GameObject soldier)
-    {
-        StartCoroutine(TakeDamageWaiter());
-        if (gameObject != null)
-        {
-            soldier.GetComponent<PhotonView>().RPC("TakeDamage", RpcTarget.All, soldierDamage);
-        }        
-    }
-
     [PunRPC]
     public void TakeDamage(float damage)
     {
         soldierHealth -= damage;
     }
 
-    public void Die()
+    [PunRPC]
+    public void ChangeDie()
     {
         isDead = true;
-        animator.SetBool("IsDying", true);
-        StartCoroutine(DieWaiter());
-
-        if (photonView.IsMine)
-        {
-            PhotonNetwork.Destroy(gameObject);
-        }        
-    }
-
-    IEnumerator TakeDamageWaiter()
-    {
-        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1);
-    }
-
-    IEnumerator DieWaiter()
-    {
-        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1);
     }
 }

@@ -216,3 +216,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   golemPrefab: {fileID: 8094050080199319091, guid: 7d37689a278015148b4f083cd8c24dde,
     type: 3}
+  goblinPrefab: {fileID: 3869627005043240429, guid: 77d4f81221133b04b89ddfc611a5ecdb,
+    type: 3}

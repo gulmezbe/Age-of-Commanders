@@ -8,6 +8,7 @@ public class PlayerSetup : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     GameObject playerCamera;
+
     // Start is called before the first frame update
     void Start()
     {

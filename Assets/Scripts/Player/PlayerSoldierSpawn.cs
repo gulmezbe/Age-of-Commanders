@@ -6,36 +6,29 @@ using Photon.Realtime;
 
 public class PlayerSoldierSpawn : MonoBehaviourPunCallbacks
 {
-    [SerializeField]
-    GameObject golemPrefab;
+    GameObject soldierPrefab;
 
-    [SerializeField]
-    GameObject goblinPrefab;
+    Dictionary<string, string> soldiers = new Dictionary<string, string>();
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        //if((string)PhotonNetwork.LocalPlayer.CustomProperties["color"] == "red")
-        //{
-        //    golemPrefab.transform.localScale = new Vector3(0.3f, 0.3f, 1f);
-        //    PhotonNetwork.Instantiate(golemPrefab.name, new Vector3(-7, -5, 0), Quaternion.identity);
-
-        //    goblinPrefab.transform.localScale = new Vector3(0.3f, 0.3f, 1f);
-        //    PhotonNetwork.Instantiate(goblinPrefab.name, new Vector3(-7, 4, 0), Quaternion.identity);
-        //}
-        //else
-        //{
-        //    golemPrefab.transform.localScale = new Vector3(-0.3f, 0.3f, 1f);
-        //    PhotonNetwork.Instantiate(golemPrefab.name, new Vector3(7, -5, 0), Quaternion.identity);
-
-        //    goblinPrefab.transform.localScale = new Vector3(-0.3f, 0.3f, 1f);
-        //    PhotonNetwork.Instantiate(goblinPrefab.name, new Vector3(7, 4, 0), Quaternion.identity);
-        //}
+        soldiers.Add("1", "Golem");
+        soldiers.Add("2", "Goblin");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SoldierSpawn(int lane, string tag)
     {
-        
+        soldierPrefab = Resources.Load(soldiers[tag], typeof(GameObject)) as GameObject;
+
+        if ((string)PhotonNetwork.LocalPlayer.CustomProperties["color"] == "red")
+        {
+            soldierPrefab.transform.localScale = new Vector3(0.3f, 0.3f, 1f);
+            PhotonNetwork.Instantiate(soldierPrefab.name, new Vector3(-7, (4f - (((float)lane - 1f) * (9f / 4f))), 0), Quaternion.identity);
+        }
+        else
+        {
+            soldierPrefab.transform.localScale = new Vector3(-0.3f, 0.3f, 1f);
+            PhotonNetwork.Instantiate(soldierPrefab.name, new Vector3(7, (4f - (((float)lane - 1f) * (9f / 4f))), 0), Quaternion.identity);
+        }
     }
 }

@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 576351940}
+  PlayerObjectToSpawnSoldier: {fileID: 91886209065360915}
   lane1: {fileID: 721980784}
   lane2: {fileID: 478838836}
   lane3: {fileID: 702010835}
@@ -1192,10 +1193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f13c12026f04944695f81cf58f71388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  golemPrefab: {fileID: 8094050080199319091, guid: 7d37689a278015148b4f083cd8c24dde,
-    type: 3}
-  goblinPrefab: {fileID: 3869627005043240429, guid: 77d4f81221133b04b89ddfc611a5ecdb,
-    type: 3}
 --- !u!1 &4125492752489841343
 GameObject:
   m_ObjectHideFlags: 0

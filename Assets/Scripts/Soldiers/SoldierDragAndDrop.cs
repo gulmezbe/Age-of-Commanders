@@ -10,6 +10,8 @@ public class SoldierDragAndDrop : MonoBehaviourPunCallbacks, IBeginDragHandler, 
     [SerializeField]
     private Canvas canvas;
 
+    public GameObject PlayerObjectToSpawnSoldier;
+
     private RectTransform rectTransform;
     private CanvasGroup canvasGroup;
 
@@ -112,7 +114,7 @@ public class SoldierDragAndDrop : MonoBehaviourPunCallbacks, IBeginDragHandler, 
 
         if (droppedLane != 0)
         {
-
+            PlayerObjectToSpawnSoldier.GetComponent<PlayerSoldierSpawn>().SoldierSpawn(droppedLane, eventData.pointerDrag.tag);
         }
 
         rectTransform.anchoredPosition = defaultPosition; 

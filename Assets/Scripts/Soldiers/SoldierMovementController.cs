@@ -11,7 +11,7 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
     float moveSpeedBlue = -1.0f;
     float soldierHealth = 100f;
     float soldierRange = 1.5f;
-    float soldierDamage = 100f;
+    float soldierDamage = 25f;
 
     GameObject[] otherSoldiers;
 
@@ -20,7 +20,6 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
 
     Animator animator;
 
-    // Start is called before the first frame update
     void Start()
     {
         float horizontalMovementRed = moveSpeedRed * Time.fixedDeltaTime;
@@ -34,7 +33,6 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
         animator.SetBool("IsWalking", true);
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (soldierHealth <= 0f)
@@ -58,12 +56,12 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
             {
                 animator.SetBool("IsWalking", false);
                 
-                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Base") && (string)PhotonNetwork.LocalPlayer.CustomProperties["color"] == "red")
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Base"))
                 {
                     animator.SetBool("IsAttacking", true);
                 }
 
-                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.AttackFinished") && (string)PhotonNetwork.LocalPlayer.CustomProperties["color"] == "red")
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.AttackFinished"))
                 {
                     if (gameObject != null && soldierHealth > 0)
                     {

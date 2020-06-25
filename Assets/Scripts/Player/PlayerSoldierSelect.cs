@@ -46,7 +46,7 @@ public class PlayerSoldierSelect : MonoBehaviourPunCallbacks
             }
         }
 
-        if (photonView.IsMine)
+        if (photonView.isActiveAndEnabled && photonView.IsMine)
         {
             SoldierSpawnUI.SetActive(true);
             gameObject.SetActive(false);

@@ -120,7 +120,7 @@ public class SoldierDragAndDrop : MonoBehaviourPunCallbacks, IBeginDragHandler, 
 
     public int FindLane(Vector2 position)
     {
-        if (position.x > 220 && position.x < 1700)
+        if (position.x > -740 && position.x < 740)
         {
             if (position.y > 324 && position.y < 540)
             {

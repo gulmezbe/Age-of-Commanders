@@ -125,7 +125,7 @@ MonoBehaviour:
   m_MinSize: {x: 302, y: 200}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 64
+  controlID: 111
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 471}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &10
 MonoBehaviour:
@@ -435,7 +435,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 8668ffffa668ffffa66affffb06affff0e6effff2e6effff3270ffff4070ffffa27bffffc27bffffc27dffffcc7dffff3c81ffff5c81ffff7283ffff8083ffff3484ffff6686ffff7686ffff8a88ffffaa88ffffaa8affffb48affff008effff208effff3290ffff3c90ffffa493ffffc493ffffc895ffffd695ffff0c96ffff6098ffff6498ffff7c98ffff8e98ffff9e98ffffbc9affffdc9affffe09cffffee9cffffe89dffffd49fffffd89ffffff09fffff02a0ffff12a0ffff78a2ffff98a2ffff98a4ffffa2a4ffffe8a4fffffaa4ffffb4b0ffffb8b0ffffd0b0ffffe2b0fffff0b0ffff76b3ffff9eb3ffffb6b3ffff02b4ffff2ab4ffff42b4ffff44b4ffff06b5ffff26b5ffff2cb5ffff3ab5ffff6cb5ffff6cb6ffff8cb6ffff8ab8ffffa0b8ffff0ebaffff12baffff2abaffff3cbaffff4cbaffff48bdffff4cbdffff64bdffff76bdffffa8bfffffc8bfffffccc1ffffdac1ffff14c2ffff3cc8ffff40c8ffff58c8ffff6ac8ffff78c8ffffe2dbfffffadbffff0cdcffff20dcffff1ee0ffff36e0ffff48e0ffff3eeaffff42eaffff5aeaffff6ceaffff7aeafffff8eaffff18ebffff1aedffff24edffffbaefffffdaefffffdcf1ffffe6f1ffff70f4ffff92f4ffffa4f6ffff70fbffffa2820000f8820000fc820000
+      m_ExpandedIDs: 3091ffff5091ffff6293ffff6c93ffffbe96ffffd096ffff3297ffff5497ffff6699ffff769dffff969dffff9a9fffffa89fffffda9fffff6eb5ffff76b5ffff9cb5ffffaeb5ffffbeb5ffffe6b7ffff06b8ffff0abaffff18baffff4ebaffff0abbffff1cbbfffff2bffffffabfffff20c0ffff32c0ffff4cc0ffff5ac2ffff7ac2ffff7ac4ffff84c4ffffcec7ffffeec7ffffeec9fffff8c9ffff0ecdffff2ecdffff32cfffff40cfffff76cffffffad5ffff16d6ffff3ad6ffff18deffff20deffff46deffff58deffff68defffff8e1ffff18e2ffff10e4ffff1ee4ffff54e4ffff66e4ffff5eefffff7eefffff82f1ffff90f1ffffcaf1ffffdef1ffff0ef2ffff88f3ffff9af3ffff2cf5ffff3ef5ffffa0f7ffffc0f7ffffd6f9ffffe4f9ffff70fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -567,7 +567,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000a8460000225200000000000066660000a84f0000e23f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

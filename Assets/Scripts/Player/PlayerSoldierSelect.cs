@@ -18,7 +18,7 @@ public class PlayerSoldierSelect : MonoBehaviourPunCallbacks
     public Sprite golemImage;
     public Sprite goblinImage;
 
-    GameObject[] players;
+    GameObject[] SoldierSelectUIs;
     bool areSoldiersSelected = false;
 
     void Awake()
@@ -36,21 +36,21 @@ public class PlayerSoldierSelect : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-        players = GameObject.FindGameObjectsWithTag("SoldierSelectUI");
+        SoldierSelectUIs = GameObject.FindGameObjectsWithTag("SoldierSelectUI");
 
-        foreach (GameObject player in players)
+        foreach (GameObject SoldierSelectUI in SoldierSelectUIs)
         {
-            if(player != null && player.activeSelf)
+            if (!(SoldierSelectUI.GetComponent<PlayerSoldierSelect>().areSoldiersSelected))
             {
-                if (!(player.GetComponent<PlayerSoldierSelect>().areSoldiersSelected))
-                {
-                    return;
-                }
-            }                      
+                return;
+            }
         }
-       
-        SoldierSpawnUI.SetActive(true);
-        gameObject.SetActive(false);
+
+        if (photonView.IsMine)
+        {
+            SoldierSpawnUI.SetActive(true);
+            gameObject.SetActive(false);
+        }       
     }
 
     public void ClickedSoldierToSelect(PointerEventData eventData)
@@ -63,7 +63,7 @@ public class PlayerSoldierSelect : MonoBehaviourPunCallbacks
         {
             SoldierImage1.overrideSprite = goblinImage;
         }
-
+        
         SoldierImage1.tag = eventData.pointerCurrentRaycast.gameObject.tag;
         gameObject.GetComponent<PhotonView>().RPC("allSoldiersSelected", RpcTarget.AllBuffered);
     }

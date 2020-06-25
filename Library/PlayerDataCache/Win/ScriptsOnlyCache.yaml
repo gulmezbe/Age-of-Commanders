@@ -10,6 +10,7 @@ ScriptsOnlyBuild:
     - PlayerSetup
     - PlayerSoldierSelect
     - PlayerSoldierSpawn
+    - SoldierDragAndDrop
     - SoldierMovementController
     - SoldierSetup
     - Spriter2UnityDX.EntityRenderer
@@ -24,8 +25,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -166,6 +165,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12704}
     - Class: 114
+      Script: {instanceID: 12762}
+    - Class: 114
       Script: {instanceID: 12862}
     - Class: 114
       Script: {instanceID: 12882}
@@ -176,23 +177,23 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13026}
     - Class: 114
-      Script: {instanceID: 13218}
+      Script: {instanceID: 13214}
     - Class: 114
-      Script: {instanceID: 13352}
+      Script: {instanceID: 13220}
     - Class: 114
-      Script: {instanceID: 13402}
+      Script: {instanceID: 13354}
     - Class: 114
-      Script: {instanceID: 13434}
+      Script: {instanceID: 13404}
     - Class: 114
-      Script: {instanceID: 13486}
+      Script: {instanceID: 13436}
     - Class: 114
       Script: {instanceID: 13488}
     - Class: 114
-      Script: {instanceID: 13518}
+      Script: {instanceID: 13490}
     - Class: 114
-      Script: {instanceID: 13526}
+      Script: {instanceID: 13520}
     - Class: 114
-      Script: {instanceID: 34894}
+      Script: {instanceID: 13528}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -281,17 +282,19 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12662}
     - Class: 114
+      Script: {instanceID: 12762}
+    - Class: 114
       Script: {instanceID: 13026}
     - Class: 114
-      Script: {instanceID: 13402}
+      Script: {instanceID: 13214}
     - Class: 114
-      Script: {instanceID: 13434}
+      Script: {instanceID: 13404}
     - Class: 114
-      Script: {instanceID: 13486}
+      Script: {instanceID: 13436}
     - Class: 114
       Script: {instanceID: 13488}
     - Class: 114
-      Script: {instanceID: 34894}
+      Script: {instanceID: 13490}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -307,6 +310,8 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -1313,7 +1318,7 @@ ScriptsOnlyBuild:
     className: AppVersionProperty
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 61829424026a6a3f9e7049bd0c09fd15
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SoldierDragAndDrop
@@ -1593,6 +1598,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: MarkerTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 5f88916f18e5aa61874a46a8014f398b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerClickedSoldierToSelect
   - hash:
       serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
@@ -1893,12 +1904,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 5f88916f18e5aa61874a46a8014f398b
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: PlayerClickedSoldierToSelect
   platform: 5
   scenePathNames:
   - Assets/Scenes/GameLauncherScene.unity

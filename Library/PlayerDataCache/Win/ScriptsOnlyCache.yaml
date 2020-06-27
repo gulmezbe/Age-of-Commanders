@@ -256,6 +256,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11312}
     - Class: 114
+      Script: {instanceID: 11400}
+    - Class: 114
       Script: {instanceID: 11444}
     - Class: 114
       Script: {instanceID: 11452}
@@ -263,6 +265,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11928}
     - Class: 114
       Script: {instanceID: 12104}
+    - Class: 114
+      Script: {instanceID: 12414}
     - Class: 114
       Script: {instanceID: 12662}
     - Class: 114
@@ -278,6 +282,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13490}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -394,7 +400,7 @@ ScriptsOnlyBuild:
     className: ChatGui
   - hash:
       serializedVersion: 2
-      Hash: 39c491f18b8f5d6f7caa14fa4f4da336
+      Hash: fe6a3feb6d6b2136bb3f4980d21bd4f1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerSoldierSelect
@@ -886,7 +892,7 @@ ScriptsOnlyBuild:
     className: CurrentRoomIsOpenToggle
   - hash:
       serializedVersion: 2
-      Hash: fbcd6fc8130d7a7679bee806eb45c588
+      Hash: 56ecb0bbd2fc5586818a98365409b42b
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerSetup

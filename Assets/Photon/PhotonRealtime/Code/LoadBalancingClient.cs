@@ -2749,12 +2749,12 @@ namespace Photon.Realtime
 
                 case StatusCode.Disconnect:
                     // disconnect due to connection exception is handled below (don't connect to GS or master in that case)
-
-                    this.ChangeLocalID(-1);
+                  
                     this.friendListRequested = null;
 
                     bool wasInRoom = this.CurrentRoom != null;
                     this.CurrentRoom = null;    // players get cleaned up inside this, too, except LocalPlayer (which we keep)
+                    this.ChangeLocalID(-1);
 
                     if (this.Server == ServerConnection.GameServer && wasInRoom)
                     {

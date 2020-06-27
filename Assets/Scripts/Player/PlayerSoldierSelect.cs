@@ -19,6 +19,9 @@ public class PlayerSoldierSelect : MonoBehaviourPunCallbacks
     public Sprite goblinImage;
 
     GameObject[] SoldierSelectUIs;
+
+    public GameObject HealthBarsPanel;
+
     bool areSoldiersSelected = false;
 
     void Awake()
@@ -33,7 +36,6 @@ public class PlayerSoldierSelect : MonoBehaviourPunCallbacks
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         SoldierSelectUIs = GameObject.FindGameObjectsWithTag("SoldierSelectUI");
@@ -49,6 +51,7 @@ public class PlayerSoldierSelect : MonoBehaviourPunCallbacks
         if (photonView.isActiveAndEnabled && photonView.IsMine)
         {
             SoldierSpawnUI.SetActive(true);
+            HealthBarsPanel.SetActive(true);
             gameObject.SetActive(false);
         }       
     }

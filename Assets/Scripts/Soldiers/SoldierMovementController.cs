@@ -14,11 +14,30 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
     float soldierDamage = 25f;
 
     GameObject[] otherSoldiers;
+    GameObject[] Players;
+    GameObject otherPlayer;
+    GameObject myPlayer;
 
     Vector3 directionOfMovementRed;
     Vector3 directionOfMovementBlue;
 
     Animator animator;
+
+    void Awake()
+    {
+        Players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in Players)
+        {
+            if ((string)player.GetComponent<PhotonView>().Owner.CustomProperties["color"] == (string)gameObject.GetComponent<PhotonView>().Owner.CustomProperties["color"])
+            {
+                myPlayer = player;
+            }
+            else
+            {
+                otherPlayer = player;
+            }
+        }
+    }
 
     void Start()
     {
@@ -35,6 +54,31 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
 
     void FixedUpdate()
     {
+        //My base destroyed part
+        if(myPlayer.GetComponent<PlayerSetup>().baseHealth <= 0f)
+        {
+            if (photonView.IsMine)
+            {
+                PhotonNetwork.Destroy(gameObject);
+                return;
+            }
+        }
+        
+        //Enemy left game part
+        if(otherPlayer == null)
+        {
+            animator.SetBool("IsWalking", false);
+            return;
+        }
+
+        //Enemy base destroyed part
+        if(otherPlayer != null && otherPlayer.GetComponent<PlayerSetup>().baseHealth <= 0f)
+        {
+            animator.SetBool("IsWalking", false);
+            return;
+        }
+
+        //Dead control part
         if (soldierHealth <= 0f)
         {
             gameObject.GetComponent<PhotonView>().RPC("ChangeDie", RpcTarget.AllBuffered);
@@ -48,6 +92,7 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
             return;
         }
 
+        //Enemy soldier attack part
         otherSoldiers = GameObject.FindGameObjectsWithTag("Soldier");
 
         foreach (GameObject soldier in otherSoldiers)
@@ -73,6 +118,59 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
 
                 return;
             }
+        }       
+
+        //Base attack part
+        if ((string)PhotonNetwork.LocalPlayer.CustomProperties["color"] == "red")
+        {
+            if(gameObject.transform.position.x > 6.5f)
+            {
+                animator.SetBool("IsWalking", false);
+
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Base"))
+                {
+                    animator.SetBool("IsAttacking", true);
+                }
+
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.AttackFinished"))
+                {
+                    if (gameObject != null && soldierHealth > 0)
+                    {
+                        otherPlayer.GetComponent<PhotonView>().RPC("TakeDamageBase", RpcTarget.AllBuffered, soldierDamage);
+                        myPlayer.GetComponent<PhotonView>().RPC("GiveDamageBase", RpcTarget.AllBuffered, soldierDamage);
+                    }
+
+                    animator.SetBool("IsAttacking", false);
+                }
+
+                return;
+            }
+
+        }
+        else
+        {
+            if (gameObject.transform.position.x < -6.5f)
+            {
+                animator.SetBool("IsWalking", false);
+
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.Base"))
+                {
+                    animator.SetBool("IsAttacking", true);
+                }
+
+                if (animator.GetCurrentAnimatorStateInfo(0).IsName("Base Layer.AttackFinished"))
+                {
+                    if (gameObject != null && soldierHealth > 0)
+                    {
+                        otherPlayer.GetComponent<PhotonView>().RPC("TakeDamageBase", RpcTarget.AllBuffered, soldierDamage);
+                        myPlayer.GetComponent<PhotonView>().RPC("GiveDamageBase", RpcTarget.AllBuffered, soldierDamage);
+                    }
+
+                    animator.SetBool("IsAttacking", false);
+                }
+
+                return;
+            }
         }
 
         if (animator.GetBool("IsAttacking"))
@@ -80,6 +178,7 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
             animator.SetBool("IsAttacking", false);
         }
 
+        //Walking part
         animator.SetBool("IsWalking", true);
 
         if ((string)PhotonNetwork.LocalPlayer.CustomProperties["color"] == "red")

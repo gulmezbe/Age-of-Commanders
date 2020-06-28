@@ -7,11 +7,11 @@ using Photon.Realtime;
 public class SoldierMovementController : MonoBehaviourPunCallbacks
 {
     bool isDead = false;
-    float moveSpeedRed = 1.0f;
-    float moveSpeedBlue = -1.0f;
-    float soldierHealth = 100f;
-    float soldierRange = 1.5f;
-    float soldierDamage = 25f;
+    float moveSpeedRed;
+    float moveSpeedBlue;
+    float soldierHealth;
+    float soldierRange;
+    float soldierDamage;
 
     GameObject[] otherSoldiers;
     GameObject[] Players;
@@ -37,6 +37,12 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
                 otherPlayer = player;
             }
         }
+
+        moveSpeedRed = myPlayer.GetComponent<PlayerSetup>().soldierMoveSpeed[gameObject.tag];
+        moveSpeedBlue = -1f * myPlayer.GetComponent<PlayerSetup>().soldierMoveSpeed[gameObject.tag];
+        soldierHealth = myPlayer.GetComponent<PlayerSetup>().soldierHealth[gameObject.tag];
+        soldierRange = myPlayer.GetComponent<PlayerSetup>().soldierRange[gameObject.tag];
+        soldierDamage = myPlayer.GetComponent<PlayerSetup>().soldierDamage[gameObject.tag];
     }
 
     void Start()

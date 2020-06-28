@@ -23,10 +23,17 @@ public class SoldierDragAndDrop : MonoBehaviourPunCallbacks, IBeginDragHandler, 
     public GameObject lane4;
     public GameObject lane5;
 
+    float spawnTimer = 0.0f;
+
+    Dictionary<string, float> soldiersSpawnTimers = new Dictionary<string, float>();
+
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+
+        soldiersSpawnTimers.Add("1", 1f);
+        soldiersSpawnTimers.Add("2", 2f);
     }
     // Start is called before the first frame update
     void Start()
@@ -36,6 +43,14 @@ public class SoldierDragAndDrop : MonoBehaviourPunCallbacks, IBeginDragHandler, 
         lane3.SetActive(false);
         lane4.SetActive(false);
         lane5.SetActive(false);
+    }
+
+    void Update()
+    {
+        if(spawnTimer < 1000f)
+        {
+            spawnTimer += Time.deltaTime;
+        }     
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -112,9 +127,10 @@ public class SoldierDragAndDrop : MonoBehaviourPunCallbacks, IBeginDragHandler, 
 
         int droppedLane = FindLane(rectTransform.anchoredPosition);
 
-        if (droppedLane != 0)
+        if (droppedLane != 0 && spawnTimer > soldiersSpawnTimers[tag])
         {
             PlayerObjectToSpawnSoldier.GetComponent<PlayerSoldierSpawn>().SoldierSpawn(droppedLane, eventData.pointerDrag.tag);
+            spawnTimer = 0.0f;
         }
 
         rectTransform.anchoredPosition = defaultPosition; 

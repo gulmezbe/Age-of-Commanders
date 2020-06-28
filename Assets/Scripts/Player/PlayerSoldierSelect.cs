@@ -68,11 +68,11 @@ public class PlayerSoldierSelect : MonoBehaviourPunCallbacks
         }
         
         SoldierImage1.tag = eventData.pointerCurrentRaycast.gameObject.tag;
-        gameObject.GetComponent<PhotonView>().RPC("allSoldiersSelected", RpcTarget.AllBuffered);
+        gameObject.GetComponent<PhotonView>().RPC("AllSoldiersSelected", RpcTarget.AllBuffered);
     }
 
     [PunRPC]
-    public void allSoldiersSelected()
+    public void AllSoldiersSelected()
     {
         areSoldiersSelected = true;
     }

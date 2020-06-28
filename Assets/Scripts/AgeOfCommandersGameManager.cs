@@ -14,7 +14,7 @@ public class AgeOfCommandersGameManager : MonoBehaviourPunCallbacks
 
     void Awake()
     {
-        if(instance != null)
+        if (instance != null)
         {
             Destroy(this.gameObject);
         }

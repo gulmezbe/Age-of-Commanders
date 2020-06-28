@@ -76,7 +76,6 @@
     <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
     <Compile Include="Assets\Scripts\AgeOfCommandersGameManager.cs" />
     <Compile Include="Assets\Scripts\Camera\CamScript.cs" />
-    <Compile Include="Assets\Scripts\Camera\CameraSetup.cs" />
     <Compile Include="Assets\Scripts\LaunchManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerClickedSoldierToSelect.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerSetup.cs" />

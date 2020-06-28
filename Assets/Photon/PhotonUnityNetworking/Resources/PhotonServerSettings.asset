@@ -41,6 +41,7 @@ MonoBehaviour:
   - allSoldiersSelected
   - TakeDamageBase
   - GiveDamageBase
+  - AllSoldiersSelected
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

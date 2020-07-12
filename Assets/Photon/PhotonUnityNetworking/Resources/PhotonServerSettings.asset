@@ -16,7 +16,7 @@ MonoBehaviour:
     AppIdRealtime: 43851682-0436-4494-9411-5412781603bc
     AppIdChat: 
     AppIdVoice: 
-    AppVersion: 0.1
+    AppVersion: 
     UseNameServer: 1
     FixedRegion: 
     Server: 
@@ -25,23 +25,22 @@ MonoBehaviour:
     AuthMode: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  DevRegion: eu
+  DevRegion: 
   PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
   StartInOfflineMode: 0
   RpcList:
+  - AllSoldiersSelected
+  - ChangeDie
   - ClickRpc
   - DestroyRpc
   - DestroySpaceship
   - Fire
+  - GiveDamageBase
   - RespawnSpaceship
   - TakeDamage
-  - ChangeDie
-  - allSoldiersSelected
   - TakeDamageBase
-  - GiveDamageBase
-  - AllSoldiersSelected
   DisableAutoOpenWizard: 1
-  ShowSettings: 1
-  DevRegionSetOnce: 1
+  ShowSettings: 0
+  DevRegionSetOnce: 0

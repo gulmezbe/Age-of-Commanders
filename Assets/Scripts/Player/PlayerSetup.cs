@@ -19,12 +19,7 @@ public class PlayerSetup : MonoBehaviourPunCallbacks
 
     public float maxBaseHealth = 100f;
     public float baseHealth = 100f;
-    public float enemyBaseHealth = 100f;
-
-    public Dictionary<string, float> soldierMoveSpeed = new Dictionary<string, float>();
-    public Dictionary<string, float> soldierHealth = new Dictionary<string, float>();
-    public Dictionary<string, float> soldierRange = new Dictionary<string, float>();
-    public Dictionary<string, float> soldierDamage = new Dictionary<string, float>();
+    public float enemyBaseHealth = 100f;  
 
     void Start()
     {
@@ -38,18 +33,6 @@ public class PlayerSetup : MonoBehaviourPunCallbacks
             MyBaseHealth.fillAmount = baseHealth / maxBaseHealth;
 
             EnemyBaseHealth.fillAmount = enemyBaseHealth / maxBaseHealth;
-
-            soldierMoveSpeed.Add("1", 1.0f);
-            soldierMoveSpeed.Add("2", 1.0f);
-
-            soldierHealth.Add("1", 100f);
-            soldierHealth.Add("2", 150f);
-
-            soldierDamage.Add("1", 25f);
-            soldierDamage.Add("2", 50f);
-
-            soldierRange.Add("1", 1.25f);
-            soldierRange.Add("2", 1.25f);
         }
         else
         {

@@ -13,6 +13,8 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
     float soldierRange;
     float soldierDamage;
 
+    GameObject gameManager;
+
     GameObject[] otherSoldiers;
     GameObject[] Players;
     GameObject otherPlayer;
@@ -25,6 +27,8 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
 
     void Awake()
     {
+        gameManager = GameObject.Find("GameManager");
+
         Players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in Players)
         {
@@ -38,11 +42,11 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
             }
         }
 
-        moveSpeedRed = myPlayer.GetComponent<PlayerSetup>().soldierMoveSpeed[gameObject.tag];
-        moveSpeedBlue = -1f * myPlayer.GetComponent<PlayerSetup>().soldierMoveSpeed[gameObject.tag];
-        soldierHealth = myPlayer.GetComponent<PlayerSetup>().soldierHealth[gameObject.tag];
-        soldierRange = myPlayer.GetComponent<PlayerSetup>().soldierRange[gameObject.tag];
-        soldierDamage = myPlayer.GetComponent<PlayerSetup>().soldierDamage[gameObject.tag];
+        moveSpeedRed = gameManager.GetComponent<AgeOfCommandersGameManager>().soldierMoveSpeed[gameObject.name];
+        moveSpeedBlue = -1f * gameManager.GetComponent<AgeOfCommandersGameManager>().soldierMoveSpeed[gameObject.name];
+        soldierHealth = gameManager.GetComponent<AgeOfCommandersGameManager>().soldierHealth[gameObject.name];
+        soldierRange = gameManager.GetComponent<AgeOfCommandersGameManager>().soldierRange[gameObject.name];
+        soldierDamage = gameManager.GetComponent<AgeOfCommandersGameManager>().soldierDamage[gameObject.name];
     }
 
     void Start()
@@ -71,9 +75,10 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
         }
         
         //Enemy left game part
-        if(otherPlayer == null)
+        if(otherPlayer == null && photonView.IsMine)
         {
             animator.SetBool("IsWalking", false);
+            PhotonNetwork.Destroy(gameObject);
             return;
         }
 

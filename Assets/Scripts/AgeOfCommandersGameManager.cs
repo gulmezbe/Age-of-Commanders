@@ -7,6 +7,30 @@ using UnityEngine.SceneManagement;
 
 public class AgeOfCommandersGameManager : MonoBehaviourPunCallbacks
 {
+    public Dictionary<string, float> soldierMoveSpeed = new Dictionary<string, float>()
+    {
+        {"Golem(Clone)", 1.0f},
+        {"Goblin(Clone)", 1.0f}
+    };
+
+    public Dictionary<string, float> soldierHealth = new Dictionary<string, float>()
+    {
+        {"Golem(Clone)", 100f},
+        {"Goblin(Clone)", 150f}
+    };
+
+    public Dictionary<string, float> soldierRange = new Dictionary<string, float>()
+    {
+        {"Golem(Clone)", 1.25f},
+        {"Goblin(Clone)", 1.25f}
+    };
+
+    public Dictionary<string, float> soldierDamage = new Dictionary<string, float>()
+    {
+        {"Golem(Clone)", 25f},
+        {"Goblin(Clone)", 50f}
+    };
+
     [SerializeField]
     GameObject playerPrefab;
 

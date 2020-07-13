@@ -3,25 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 
 public class SoldierSetup : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        if (photonView.IsMine)
+        if(SceneManager.GetActiveScene().name == "GameScene")
         {
-            transform.GetComponent<SoldierMovementController>().enabled = true;
+            if (photonView.IsMine)
+            {
+                transform.GetComponent<SoldierMovementController>().enabled = true;
+            }
+            else
+            {
+                transform.GetComponent<SoldierMovementController>().enabled = false;
+            }
         }
-        else
+        else if(SceneManager.GetActiveScene().name == "GameSceneSinglePlayer")
         {
-            transform.GetComponent<SoldierMovementController>().enabled = false;
+            transform.GetComponent<SoldierMovementControllerSinglePlayer>().enabled = true;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

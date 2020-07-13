@@ -953,6 +953,7 @@ GameObject:
   - component: {fileID: -4242012395223784472}
   - component: {fileID: 4177013395190758861}
   - component: {fileID: -3238022972210567880}
+  - component: {fileID: 5138834041017142159}
   m_Layer: 0
   m_Name: Golem
   m_TagString: Soldier
@@ -1030,7 +1031,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8094050080199319091}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dd110846851f0c438f157a6e6156938, type: 3}
   m_Name: 
@@ -1100,6 +1101,18 @@ MonoBehaviour:
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0
+--- !u!114 &5138834041017142159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8094050080199319091}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fed92ad2f72de4296a437c5882fc0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8094053709682300975
 GameObject:
   m_ObjectHideFlags: 0

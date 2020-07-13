@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using UnityEngine.SceneManagement;
 using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class LaunchManager : MonoBehaviourPunCallbacks
@@ -22,13 +23,22 @@ public class LaunchManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        EnterGamePanel.SetActive(true);
+        EnterGamePanel.SetActive(false);
         ConnectionStatusPanel.SetActive(false);
         SingleMultiPanel.SetActive(false);
         SinglePlayerPanel.SetActive(false);
         MultiPlayerPanel.SetActive(false);
         SearchingGamePanel.SetActive(false);
         PlayerProfilePanel.SetActive(false);
+
+        if (PhotonNetwork.IsConnected)
+        {
+            SingleMultiPanel.SetActive(true);
+        }
+        else
+        {
+            EnterGamePanel.SetActive(true);
+        }      
     }
 
     void Update()
@@ -50,17 +60,29 @@ public class LaunchManager : MonoBehaviourPunCallbacks
 
     public void VersusEasy()
     {
-        
+        PhotonNetwork.LocalPlayer.CustomProperties.Clear();
+        Hashtable setBot = new Hashtable() { { "bot", "easy" } };
+        PhotonNetwork.LocalPlayer.SetCustomProperties(setBot);
+
+        SceneManager.LoadScene("GameSceneSinglePlayer");
     }
 
     public void VersusNormal()
     {
-        
+        PhotonNetwork.LocalPlayer.CustomProperties.Clear();
+        Hashtable setBot = new Hashtable() { { "bot", "normal" } };
+        PhotonNetwork.LocalPlayer.SetCustomProperties(setBot);
+
+        SceneManager.LoadScene("GameSceneSinglePlayer");
     }
 
     public void VersusHard()
     {
-        
+        PhotonNetwork.LocalPlayer.CustomProperties.Clear();
+        Hashtable setBot = new Hashtable() { { "bot", "hard" } };
+        PhotonNetwork.LocalPlayer.SetCustomProperties(setBot);
+
+        SceneManager.LoadScene("GameSceneSinglePlayer");
     }
 
     public void MainMenuSingle()

@@ -25,7 +25,7 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
 
     Animator animator;
 
-    void Awake()
+    void Start()
     {
         gameManager = GameObject.Find("GameManager");
 
@@ -47,10 +47,8 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
         soldierHealth = gameManager.GetComponent<AgeOfCommandersGameManager>().soldierHealth[gameObject.name];
         soldierRange = gameManager.GetComponent<AgeOfCommandersGameManager>().soldierRange[gameObject.name];
         soldierDamage = gameManager.GetComponent<AgeOfCommandersGameManager>().soldierDamage[gameObject.name];
-    }
 
-    void Start()
-    {
+        //start
         float horizontalMovementRed = moveSpeedRed * Time.fixedDeltaTime;
         float horizontalMovementBlue = moveSpeedBlue * Time.fixedDeltaTime;
 

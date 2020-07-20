@@ -21,7 +21,7 @@ public class SoldierMovementControllerSinglePlayer : MonoBehaviour
 
     Animator animator;
 
-    void Awake()
+    void Start()
     {
         gameManager = GameObject.Find("GameManager");
 
@@ -32,10 +32,7 @@ public class SoldierMovementControllerSinglePlayer : MonoBehaviour
         soldierHealth = gameManager.GetComponent<AgeOfCommandersGameManagerSinglePlayer>().soldierHealth[gameObject.name];
         soldierRange = gameManager.GetComponent<AgeOfCommandersGameManagerSinglePlayer>().soldierRange[gameObject.name];
         soldierDamage = gameManager.GetComponent<AgeOfCommandersGameManagerSinglePlayer>().soldierDamage[gameObject.name];
-    }
 
-    void Start()
-    {
         float horizontalMovementPlayer = moveSpeedPlayer * Time.fixedDeltaTime;
         float horizontalMovementBot = moveSpeedBot * Time.fixedDeltaTime;
 

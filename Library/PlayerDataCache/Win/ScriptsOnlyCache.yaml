@@ -2,15 +2,25 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - AgeOfCommandersGameManager
+    - AgeOfCommandersGameManagerSinglePlayer
     - CamScript
+    - EasyBotSoldierSpawn
+    - HardBotSoldierSpawn
     - LaunchManager
+    - NormalBotSoldierSpawn
     - PlayerClickedSoldierToSelect
+    - PlayerClickedSoldierToSelectSinglePlayer
     - PlayerInformation
     - PlayerSetup
+    - PlayerSetupSinglePlayer
     - PlayerSoldierSelect
+    - PlayerSoldierSelectSinglePlayer
     - PlayerSoldierSpawn
+    - PlayerSoldierSpawnSinglePlayer
     - SoldierDragAndDrop
+    - SoldierDragAndDropSinglePlayer
     - SoldierMovementController
+    - SoldierMovementControllerSinglePlayer
     - SoldierSetup
     - Spriter2UnityDX.EntityRenderer
     - Spriter2UnityDX.TextureController
@@ -24,8 +34,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PunSceneSettings
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -128,71 +136,89 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11372}
     - Class: 114
-      Script: {instanceID: 11416}
+      Script: {instanceID: 11410}
     - Class: 114
-      Script: {instanceID: 11458}
+      Script: {instanceID: 11418}
     - Class: 114
-      Script: {instanceID: 11622}
+      Script: {instanceID: 11460}
     - Class: 114
-      Script: {instanceID: 11878}
+      Script: {instanceID: 11626}
     - Class: 114
-      Script: {instanceID: 11932}
+      Script: {instanceID: 11656}
     - Class: 114
-      Script: {instanceID: 11966}
+      Script: {instanceID: 11884}
     - Class: 114
-      Script: {instanceID: 12010}
+      Script: {instanceID: 11938}
     - Class: 114
-      Script: {instanceID: 12110}
+      Script: {instanceID: 11972}
     - Class: 114
-      Script: {instanceID: 12218}
+      Script: {instanceID: 12016}
     - Class: 114
-      Script: {instanceID: 12262}
+      Script: {instanceID: 12116}
     - Class: 114
-      Script: {instanceID: 12286}
+      Script: {instanceID: 12142}
     - Class: 114
-      Script: {instanceID: 12388}
+      Script: {instanceID: 12194}
     - Class: 114
-      Script: {instanceID: 12476}
+      Script: {instanceID: 12228}
     - Class: 114
-      Script: {instanceID: 12550}
+      Script: {instanceID: 12272}
     - Class: 114
-      Script: {instanceID: 12632}
+      Script: {instanceID: 12296}
     - Class: 114
-      Script: {instanceID: 12640}
+      Script: {instanceID: 12398}
     - Class: 114
-      Script: {instanceID: 12654}
+      Script: {instanceID: 12486}
+    - Class: 114
+      Script: {instanceID: 12560}
+    - Class: 114
+      Script: {instanceID: 12642}
+    - Class: 114
+      Script: {instanceID: 12650}
+    - Class: 114
+      Script: {instanceID: 12664}
     - Class: 114
       Script: {instanceID: 12692}
     - Class: 114
-      Script: {instanceID: 12708}
+      Script: {instanceID: 12704}
     - Class: 114
-      Script: {instanceID: 12766}
+      Script: {instanceID: 12720}
     - Class: 114
-      Script: {instanceID: 12866}
+      Script: {instanceID: 12778}
     - Class: 114
-      Script: {instanceID: 12886}
+      Script: {instanceID: 12878}
     - Class: 114
-      Script: {instanceID: 12896}
+      Script: {instanceID: 12898}
     - Class: 114
-      Script: {instanceID: 12954}
+      Script: {instanceID: 12908}
     - Class: 114
-      Script: {instanceID: 13030}
+      Script: {instanceID: 12966}
     - Class: 114
-      Script: {instanceID: 13218}
+      Script: {instanceID: 12972}
     - Class: 114
-      Script: {instanceID: 13224}
+      Script: {instanceID: 13044}
     - Class: 114
-      Script: {instanceID: 13358}
+      Script: {instanceID: 13052}
     - Class: 114
-      Script: {instanceID: 13408}
+      Script: {instanceID: 13100}
     - Class: 114
-      Script: {instanceID: 13440}
+      Script: {instanceID: 13236}
     - Class: 114
-      Script: {instanceID: 13492}
+      Script: {instanceID: 13242}
     - Class: 114
-      Script: {instanceID: 13494}
+      Script: {instanceID: 13376}
     - Class: 114
-      Script: {instanceID: 13524}
+      Script: {instanceID: 13426}
+    - Class: 114
+      Script: {instanceID: 13458}
+    - Class: 114
+      Script: {instanceID: 13470}
+    - Class: 114
+      Script: {instanceID: 13512}
+    - Class: 114
+      Script: {instanceID: 13514}
+    - Class: 114
+      Script: {instanceID: 13544}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -259,25 +285,100 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11320}
     - Class: 114
-      Script: {instanceID: 11458}
+      Script: {instanceID: 11460}
     - Class: 114
-      Script: {instanceID: 11932}
+      Script: {instanceID: 11938}
     - Class: 114
-      Script: {instanceID: 12110}
+      Script: {instanceID: 12116}
     - Class: 114
-      Script: {instanceID: 12666}
+      Script: {instanceID: 12676}
     - Class: 114
-      Script: {instanceID: 12766}
+      Script: {instanceID: 12778}
     - Class: 114
-      Script: {instanceID: 13030}
+      Script: {instanceID: 13044}
     - Class: 114
-      Script: {instanceID: 13218}
+      Script: {instanceID: 13236}
     - Class: 114
-      Script: {instanceID: 13408}
+      Script: {instanceID: 13426}
     - Class: 114
-      Script: {instanceID: 13440}
+      Script: {instanceID: 13458}
     - Class: 114
-      Script: {instanceID: 13494}
+      Script: {instanceID: 13514}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    - Class: 225
+      Script: {instanceID: 0}
+    Assets/Scenes/GameSceneSinglePlayer.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11172}
+    - Class: 114
+      Script: {instanceID: 11174}
+    - Class: 114
+      Script: {instanceID: 11200}
+    - Class: 114
+      Script: {instanceID: 11410}
+    - Class: 114
+      Script: {instanceID: 11460}
+    - Class: 114
+      Script: {instanceID: 11466}
+    - Class: 114
+      Script: {instanceID: 11656}
+    - Class: 114
+      Script: {instanceID: 11938}
+    - Class: 114
+      Script: {instanceID: 12142}
+    - Class: 114
+      Script: {instanceID: 12194}
+    - Class: 114
+      Script: {instanceID: 12972}
+    - Class: 114
+      Script: {instanceID: 13044}
+    - Class: 114
+      Script: {instanceID: 13052}
+    - Class: 114
+      Script: {instanceID: 13100}
+    - Class: 114
+      Script: {instanceID: 13426}
+    - Class: 114
+      Script: {instanceID: 13458}
+    - Class: 114
+      Script: {instanceID: 13470}
+    - Class: 114
+      Script: {instanceID: 13514}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -505,6 +606,12 @@ ScriptsOnlyBuild:
     className: CullingHandler
   - hash:
       serializedVersion: 2
+      Hash: b2d2687ad526b65075b3c223c66c5210
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoldierDragAndDropSinglePlayer
+  - hash:
+      serializedVersion: 2
       Hash: 499fd23433e68e265d153aa6b95d0047
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -551,6 +658,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: 601cf8f04daffb00e56e7bf7e14e293e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AgeOfCommandersGameManagerSinglePlayer
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -665,6 +778,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.dll
     namespaceName: Photon.Pun
     className: PhotonHandler
+  - hash:
+      serializedVersion: 2
+      Hash: 56ecb0bbd2fc5586818a98365409b42b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerSetupSinglePlayer
   - hash:
       serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
@@ -907,6 +1026,12 @@ ScriptsOnlyBuild:
     className: PlayerSetup
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EasyBotSoldierSpawn
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -935,6 +1060,12 @@ ScriptsOnlyBuild:
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
     className: CloudRegionProperty
+  - hash:
+      serializedVersion: 2
+      Hash: 5f88916f18e5aa61874a46a8014f398b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerClickedSoldierToSelectSinglePlayer
   - hash:
       serializedVersion: 2
       Hash: ee84478990d29c6d64a8d3003b44725c
@@ -1249,6 +1380,12 @@ ScriptsOnlyBuild:
     className: TMP_DigitValidator
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoldierMovementControllerSinglePlayer
+  - hash:
+      serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1429,6 +1566,12 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: HardBotSoldierSpawn
+  - hash:
+      serializedVersion: 2
       Hash: 7221ab9307aaa6b66a416e2e4561f420
     assemblyName: PhotonUnityNetworking.Demos.dll
     namespaceName: Photon.Pun.Demo.Cockpit
@@ -1483,6 +1626,12 @@ ScriptsOnlyBuild:
     className: SkewTextExample
   - hash:
       serializedVersion: 2
+      Hash: fe6a3feb6d6b2136bb3f4980d21bd4f1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerSoldierSelectSinglePlayer
+  - hash:
+      serializedVersion: 2
       Hash: fe2d355deb0ca31d59a0a7cf4d141fc3
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1511,6 +1660,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TextMeshSpawner
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NormalBotSoldierSpawn
   - hash:
       serializedVersion: 2
       Hash: e63944317d2f5958e31963668bb29158
@@ -1771,6 +1926,12 @@ ScriptsOnlyBuild:
     className: PlayerListEntry
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerSoldierSpawnSinglePlayer
+  - hash:
+      serializedVersion: 2
       Hash: 87207d40b89ca632396b05b3cb1e69b0
     assemblyName: PhotonUnityNetworking.Utilities.dll
     namespaceName: Photon.Pun.UtilityScripts
@@ -1893,4 +2054,5 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/GameLauncherScene.unity
   - Assets/Scenes/GameScene.unity
+  - Assets/Scenes/GameSceneSinglePlayer.unity
   playerPath: "C:/Users/ms\u0131/Desktop/Unity Builds/Age of Commanders.exe"

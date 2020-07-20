@@ -106,7 +106,9 @@ public class SoldierMovementController : MonoBehaviourPunCallbacks
 
         foreach (GameObject soldier in otherSoldiers)
         {
-            if (!(soldier.GetComponent<SoldierMovementController>().isDead) && !isDead && (string)soldier.GetComponent<PhotonView>().Owner.CustomProperties["color"] != (string)gameObject.GetComponent<PhotonView>().Owner.CustomProperties["color"] && soldier.transform.position.y == gameObject.transform.position.y && Mathf.Abs(soldier.transform.position.x - gameObject.transform.position.x) < soldierRange)
+            if (!(soldier.GetComponent<SoldierMovementController>().isDead) && !isDead 
+                && (string)soldier.GetComponent<PhotonView>().Owner.CustomProperties["color"] != (string)gameObject.GetComponent<PhotonView>().Owner.CustomProperties["color"] 
+                && soldier.transform.position.y == gameObject.transform.position.y && Mathf.Abs(soldier.transform.position.x - gameObject.transform.position.x) < soldierRange)
             {
                 animator.SetBool("IsWalking", false);
                 
